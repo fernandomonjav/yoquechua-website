@@ -1,0 +1,66 @@
+:root {
+  --gray: #718096;
+  --gray-50: #f7fafc;
+  --gray-100: #edf2f7;
+  --gray-200: #e2e8f0;
+  --gray-300: #cbd5e0;
+  --gray-400: #a0aec0;
+  --gray-500: #718096;
+  --gray-600: #4a5568;
+  --gray-700: #2d3748;
+  --gray-800: #1a202c;
+  --gray-900: #171923;
+
+  --primary-50: #fff5f5;
+  --primary-100: #fed7d7;
+  --primary-200: #feb2b2;
+  --primary-300: #fc8181;
+  --primary-400: #f56565;
+  --primary-500: #e53e3e;
+  --primary-600: #c53030;
+  --primary-700: #9b2c2c;
+  --primary-800: #822727;
+  --primary-900: #63171b;
+
+  --white: #ffffff;
+  --black: #000000;
+  --primary: #e53e3e;
+
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  --font-monospace: 'Courier New', Courier, monospace;
+
+  --font-regular: 400;
+  --font-medium: 500;
+  --font-semibold: 600;
+  --font-bold: 700;
+  --font-extrabold: 800;
+  --font-black: 900;
+
+  --border-color: var(--gray-200);
+  --border: 1px solid var(--border-color);
+  --border-radius: 0.5rem;
+  --shadow-border: 0px 0px 0px 1px var(--border-color);
+  --transition: all 0.25s ease 0s;
+
+  --body-color: var(--gray-700);
+  --body-background: var(--white);
+
+  --surface-color: var(--gray-700);
+  --surface-background: var(--white);
+
+  --header-height: 56px;
+
+  --button-color: var(--gray-700);
+  --button-background: var(--gray-100);
+  --button-hover-background: var(--gray-200);
+  --button-active-background: var(--gray-300);
+  --button-border-color: var(--border-color);
+  --button-border: 1px solid var(--button-border-color);
+  --button-border-radius: var(--border-radius);
+
+  --button-primary-color: var(--white);
+  --button-primary-background: var(--primary-500);
+  --button-primary-hover-background: var(--primary-400);
+  --button-primary-active-background: var(--primary-600);
+}

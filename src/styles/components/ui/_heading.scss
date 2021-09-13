@@ -1,0 +1,30 @@
+.heading {
+  margin-bottom: 2rem;
+
+  &__title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-align: center;
+  }
+
+  &__description {
+    margin: 0.5rem auto 0 auto;
+    text-align: center;
+    line-height: 1.5;
+    opacity: 0.75;
+  }
+
+  @media screen and (min-width: 960px) {
+    margin-bottom: 2rem;
+
+    &__title {
+      font-size: 2rem;
+    }
+
+    &__description {
+      max-width: 60%;
+      margin: 0.25rem auto 0 auto;
+      font-size: 1rem;
+    }
+  }
+}

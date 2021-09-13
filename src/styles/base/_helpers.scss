@@ -1,0 +1,49 @@
+.italic {
+  font-style: italic;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.blockquote {
+  font-style: italic;
+  opacity: 0.75;
+}
+
+.page {
+  min-height: calc(100vh - var(--header-height));
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+}
+
+.section {
+  padding-top: 2rem;
+
+  &:first-of-type {
+    padding-top: 6rem;
+  }
+
+  &:last-of-type {
+    padding-bottom: 2rem;
+  }
+}
+
+@media screen and (min-width: 960px) {
+  .page {
+    min-height: calc(100vh - 56px);
+  }
+
+  .section {
+    padding-top: 4rem;
+
+    &:first-of-type {
+      padding-top: 8rem;
+    }
+
+    &:last-of-type {
+      padding-bottom: 4rem;
+    }
+  }
+}

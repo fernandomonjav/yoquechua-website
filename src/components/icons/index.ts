@@ -1,0 +1,7 @@
+export * from './BookOpenIcon'
+export * from './CloseIcon'
+export * from './CompassIcon'
+export * from './HomeIcon'
+export * from './InfoIcon'
+export * from './MenuIcon'
+export * from './RocketIcon'
