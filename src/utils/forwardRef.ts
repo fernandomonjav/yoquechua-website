@@ -1,30 +1,27 @@
 import React from 'react'
 
-export type PropsOfElement<Tag> = Tag extends keyof JSX.IntrinsicElements
-  ? JSX.IntrinsicElements[Tag]
-  : Tag extends React.ComponentType<infer Props>
-  ? Props & JSX.IntrinsicAttributes
-  : never
+export type PropsOfElement<
+  E extends keyof JSX.IntrinsicElements | React.JSXElementConstructor<any>
+> = JSX.LibraryManagedAttributes<E, React.ComponentPropsWithRef<E>>
 
-export type ComponentWithAs<TElementType extends React.ElementType, TProps = unknown> = {
+export interface ComponentWithAs<
+  TElementType extends keyof JSX.IntrinsicElements = 'div',
+  TProps = unknown
+> {
   <TExtendedElementType extends React.ElementType = TElementType>(
-    props: React.PropsWithChildren<TProps> & {
+    props: Omit<PropsOfElement<TExtendedElementType>, 'as' | keyof TProps> & {
       as?: TExtendedElementType
-    } & PropsOfElement<TExtendedElementType>
-  ): React.ReactElement<any, any>
-  displayName?: string
-  propTypes?: React.WeakValidationMap<any>
-  contextTypes?: React.ValidationMap<any>
-  defaultProps?: Partial<any>
+    } & TProps
+  ): JSX.Element
 }
 
-export function forwardRef<TElementType extends React.ElementType, TProps = unknown>(
+export const forwardRef = <TElement extends keyof JSX.IntrinsicElements = 'div', TProps = unknown>(
   component: React.ForwardRefRenderFunction<
     any,
-    React.PropsWithChildren<TProps> & {
-      as?: TElementType
-    } & PropsOfElement<TElementType>
+    Omit<PropsOfElement<TElement>, 'as' | keyof TProps> & {
+      as?: TElement
+    } & TProps
   >
-) {
-  return React.forwardRef(component) as unknown as ComponentWithAs<TElementType, TProps>
+) => {
+  return React.forwardRef(component) as ComponentWithAs<TElement, TProps>
 }
